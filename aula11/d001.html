@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Nacionalidade</title>
+    <style>
+        body {
+            font: normal 14pt Arial;
+            height: 95.5vh;
+            background-image: linear-gradient(to bottom, black 30%, green);
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio da Nacionalidade</h1>
+    Você nasceu em que país? <input type="text" name="txtpaís" id="txtpaís" placeholder="Ex.: Brasil, Itália, EUA...">
+    <input type="button" value="Confirmar" onclick="definir()">
+    <div id="res"></div>
+    <script>
+        function definir() {
+            var tpaís = document.querySelector('#txtpaís')
+            var país = String(tpaís.value)
+            var res = document.querySelector('#res')
+            res.innerHTML = `<p>Você é do país: <strong>${país}</strong></p>`
+            if (país == 'Brasil') {
+                res.innerHTML += '<p>Então você é <strong>brasileiro</strong></p>'
+            } else {
+                res.innerHTML += '<p>Então você é <strong>estrangeiro</strong></p>'
+            }
+        }
+    </script>
+</body>
+</html>
